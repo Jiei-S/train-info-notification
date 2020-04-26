@@ -1,23 +1,20 @@
 # train-info-notification
 電車の運行情報をLINE通知するアプリケーションです。
 
+
 ## Install
-#### [LINE Notify](https://notify-bot.line.me/ja/)にてアクセストークン発行
-#### git clone
+- [LINE Notify](https://notify-bot.line.me/ja/)にてアクセストークン発行
+- git clone
 ~~~
 $ git clone https://github.com/Jiei-S/train-info-notification.git
 ~~~
-#### 環境構築
+- 環境構築  
 install.shの実行により、ライブラリのインストール、環境変数の設定を行います。
 ~~~
 $ cd train-info-notification/
 $ . install.sh
 ~~~
-- インストールされるライブラリ   
-beautifulsoup4  
-requests  
-lxml
-- 環境変数 設定
+環境変数
 <dl>
   <dt>LINE_API_URL</dt>
   <dd>https://notify-api.line.me/api/notify</dd>
