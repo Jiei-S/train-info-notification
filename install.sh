@@ -33,7 +33,7 @@ do
   do    
     read -p "${env}: " val
   done
-  export $env=$val
+  export $env="$val"
 done
 echo "### ENVIRON Setting Complete! ###"
 
