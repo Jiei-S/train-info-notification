@@ -26,7 +26,7 @@ $ . install.sh
 
 
 ## Usage
-- run
+#### run
 ~~~
 $ python main.py
 ~~~
