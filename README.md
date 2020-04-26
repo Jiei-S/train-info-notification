@@ -1,6 +1,6 @@
 # train-info-notification
-電車の運行情報をLINE通知するアプリケーションです。
-
+電車の運行情報をLINE通知するアプリケーションです。  
+<img src="https://user-images.githubusercontent.com/55335212/80302341-69783400-87e4-11ea-929f-2c4bc7230f40.jpeg" width="320px">
 
 ## Install
 - [LINE Notify](https://notify-bot.line.me/ja/)にてアクセストークン発行
@@ -24,11 +24,14 @@ $ . install.sh
   <dd>Yahoo!路線情報の路線URL<br>（例）https://transit.yahoo.co.jp/traininfo/detail/21/0/<br>複数設定の場合、半スペ区切り<br>（例）https://transit.yahoo.co.jp/traininfo/detail/21/0/ https://transit.yahoo.co.jp/traininfo/detail/22/0/</dd>
 </dl>
 
-
-
-
 ## Usage
-#### run
+- run
 ~~~
 $ python main.py
 ~~~
+
+## Other
+インストールされるライブラリはこちら  
+beautifulsoup4  
+requests  
+lxml
