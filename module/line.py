@@ -10,8 +10,8 @@ class Line:
     def __init__(self):
         """環境変数取得"""
         try:
-            self.url = os.environ['LINE_URL']
-            self.token = os.environ['LINE_TOKEN']
+            self.url = os.environ['LINE_API_URL']
+            self.token = os.environ['LINE_API_TOKEN']
             self.headers = {'Authorization': 'Bearer ' + self.token}
         except KeyError as err:
             raise KeyError(err)
