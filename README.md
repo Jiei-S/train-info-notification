@@ -22,6 +22,11 @@ $ . install.sh
   <dd>アクセストークン</dd>
 </dl>
 
+路線URL
+train_urls.txt　に収集したい路線URLを記載する。
+（例）
+https://transit.yahoo.co.jp/traininfo/detail/21/0/
+
 ## Usage
 - run
 ~~~
