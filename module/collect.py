@@ -1,7 +1,6 @@
 """
 運行情報収集モジュール
 """
-import os
 from concurrent.futures import ThreadPoolExecutor
 import requests
 from bs4 import BeautifulSoup
@@ -16,8 +15,9 @@ class Collecter:
     def __init__(self):
         """環境変数取得"""
         try:
-            self.urls = list(os.environ['TRAIN_URLS'].split())
-        except KeyError:
+            with open('train_urls.txt', 'r') as f:
+                self.urls = f.read().splitlines()
+        except FileNotFoundError:
             raise NotFoundElementError('url get failed!')
 
     # pylint: disable=R0201
@@ -40,10 +40,11 @@ class Collecter:
 
         if not err_trains:
             train_info += 'Collect Complete!'
-        else:
-            train_info += 'This is Error url!'
-            for url in err_trains:
-                train_info += '\n' + url
+            return train_info
+
+        train_info += 'This is Error url!'
+        for url in err_trains:
+            train_info += '\n' + url
         return train_info
 
     def get_train_info(self):

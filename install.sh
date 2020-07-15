@@ -1,7 +1,9 @@
-#!/usr/bin/sh
+#!/bin/sh
 
-echo -e "====================\nSetting Start!\n===================="
+echo -e "====================\\nSetting Start!\\n===================="
 
+# 仮想環境構築
+python -m venv myenv && source myenv/bin/activate
 
 #Pythonライブラリ インストール
 COMMANDS=(
@@ -17,25 +19,19 @@ do
 done
 echo "### Install Complete! ###"
 
-
 #環境変数 設定
 ENVIRON=(
     LINE_API_URL
     LINE_API_TOKEN
-    TRAIN_URLS
 )
 
 echo "### ENVIRON Setting ###"
 for env in ${ENVIRON[@]}
 do
   read -p "${env}: " val
-  while [ -z "$val" ]
-  do    
-    read -p "${env}: " val
-  done
   export $env="$val"
 done
 echo "### ENVIRON Setting Complete! ###"
 
 
-echo -e "====================\nSetting Finish!\n===================="
+echo -e "====================\\nSetting Finish!\\n===================="
