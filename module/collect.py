@@ -13,7 +13,6 @@ class NotFoundElementError(Exception):
 class Collecter:
     """収集クラス"""
     def __init__(self):
-        """環境変数取得"""
         try:
             with open('train_urls.txt', 'r') as f:
                 self.urls = f.read().splitlines()
