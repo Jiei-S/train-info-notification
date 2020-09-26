@@ -1,25 +1,25 @@
-"""
-運行情報収集モジュール
+"""運行情報収集モジュール
 """
 from concurrent.futures import ThreadPoolExecutor
 import requests
+
 from bs4 import BeautifulSoup
 
 
 class NotFoundElementError(Exception):
-    """要素が存在しない時のエラー"""
+    """ 要素が存在しない時のエラー """
+    pass
 
 
-class Collecter:
-    """収集クラス"""
+class Collector:
+    """ 収集クラス """
     def __init__(self):
         try:
-            with open('train_urls.txt', 'r') as f:
-                self.urls = f.read().splitlines()
-        except FileNotFoundError:
-            raise NotFoundElementError('url get failed!')
+            with open('train_urls.txt', 'r') as file:
+                self.urls = file.read().splitlines()
+        except FileNotFoundError as err:
+            raise NotFoundElementError('url get failed!') from err
 
-    # pylint: disable=R0201
     def format_train_info(self, info, err_trains):
         """運行情報整形
 
@@ -34,8 +34,8 @@ class Collecter:
             try:
                 lead, _, detail = i[1].strip('\n').split('\n')
                 train_info += '{0}\n{1}\n{2}\n\n'.format(i[0], lead, detail)
-            except ValueError:
-                raise ValueError('format failed!')
+            except ValueError as err:
+                raise ValueError('format failed!') from err
 
         if not err_trains:
             train_info += 'Collect Complete!'

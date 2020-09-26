@@ -1,20 +1,18 @@
-"""
-LINE通知モジュール
+"""LINE通知モジュール
 """
 import os
 import requests
 
 
 class Line:
-    """LINE通知クラス"""
+    """ LINE通知クラス """
     def __init__(self):
-        """環境変数取得"""
         try:
             self.url = os.environ['LINE_API_URL']
             self.token = os.environ['LINE_API_TOKEN']
             self.headers = {'Authorization': 'Bearer ' + self.token}
         except KeyError as err:
-            raise KeyError(err)
+            raise KeyError(err) from err
 
     def send_success(self, info):
         """収集成功

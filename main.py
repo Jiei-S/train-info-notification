@@ -1,21 +1,20 @@
-"""
-実行モジュール
+"""実行モジュール
 """
 import sys
-from module.collect import Collecter, NotFoundElementError
+from module.collect import Collector, NotFoundElementError
 from module.line import Line
 
 
 def run():
-    """実行関数"""
+    """ 実行関数 """
     try:
         line = Line()
     except KeyError:
         sys.exit()
 
     try:
-        collecter = Collecter()
-        train_info = collecter.get_train_info()
+        collector = Collector()
+        train_info = collector.get_train_info()
     except (ValueError, NotFoundElementError) as err:
         line.send_error(err)
     else:
