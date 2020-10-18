@@ -33,8 +33,8 @@ https://transit.yahoo.co.jp/traininfo/detail/21/0/
 $ python main.py
 ~~~
 
-## Other
-インストールされるライブラリはこちら  
+## Requirement
+install.shの実行により、インストールされます。
 beautifulsoup4  
 requests  
 lxml
