@@ -34,7 +34,7 @@ $ python main.py
 ~~~
 
 ## Requirement
-install.shの実行により、インストールされます。
-beautifulsoup4  
-requests  
-lxml
+install.shの実行により、インストールされます。  
+- beautifulsoup4  
+- requests  
+- lxml
