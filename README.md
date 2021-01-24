@@ -1,4 +1,5 @@
 # 運行情報をLINE通知
+Yahoo!路線情報から運行情報をスクレイピングし、LINE通知するアプリです。  
 <img src="https://user-images.githubusercontent.com/55335212/80302341-69783400-87e4-11ea-929f-2c4bc7230f40.jpeg" width="320px">
 
 ## Install
